@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merihan Ewees — Pharmacist &amp; Medical Content Writer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F6F2EB;
+    --sand:#EFE8DB;
+    --walnut:#5B4A3A;
+    --clay:#A9714F;
+    --clay-soft:#C08A66;
+    --stone:#8C8577;
+    --line:#E2D9C8;
+    --white:#FFFDF9;
+    --ink:#332B23;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--clay);color:var(--white);}
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,235,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex;justify-content:space-between;align-items:center;height:66px;}
+  .logo{font-family:'Fraunces',serif;font-weight:500;font-size:17px;letter-spacing:-0.01em;color:var(--walnut);display:flex;flex-direction:column;line-height:1.15;}
+  .logo .logo-role{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);margin-top:1px;}
+  .navlinks{display:flex;gap:30px;font-size:13.5px;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--stone);transition:color .2s;}
+  .navlinks a:hover{color:var(--clay);}
+  a:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:2px;}
+
+  /* ---- Hero ---- */
+  .hero{padding:100px 0 80px;}
+  .hero-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--clay);display:flex;align-items:center;gap:10px;margin-bottom:26px;
+  }
+  .hero-label::before{content:'';width:18px;height:1px;background:var(--clay);}
+  h1{
+    font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5.6vw,58px);
+    line-height:1.08;letter-spacing:-0.015em;max-width:760px;color:var(--walnut);
+  }
+  h1 em{font-style:italic;color:var(--clay);font-weight:500;}
+  .hero-sub{margin-top:24px;font-size:17px;max-width:540px;color:#5C5346;}
+  .cta-row{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-weight:600;font-size:14px;padding:12px 24px;border-radius:3px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary{background:var(--walnut);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(91,74,58,0.22);}
+  .btn-ghost{border:1px solid var(--line);color:var(--walnut);}
+  .btn-ghost:hover{border-color:var(--clay);color:var(--clay);}
+
+  section{padding:80px 0;border-top:1px solid var(--line);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:14px;}
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,3.4vw,34px);color:var(--walnut);letter-spacing:-0.01em;max-width:600px;}
+  .sec-desc{margin-top:14px;color:#6B6153;max-width:540px;font-size:15px;}
+  .sec-head{margin-bottom:48px;}
+
+  /* ---- Services ---- */
+  .service-list{border-top:1px solid var(--line);}
+  .service{
+    display:grid;grid-template-columns:220px 1fr;gap:32px;
+    padding:32px 0;border-bottom:1px solid var(--line);
+  }
+  @media(max-width:720px){.service{grid-template-columns:1fr;gap:10px;}}
+  .service .s-name{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--walnut);}
+  .service .
+s-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--clay);display:block;margin-bottom:8px;}
+  .service p{font-size:14.5px;color:#6B6153;max-width:520px;}
+  .service .s-examples{margin-top:10px;font-size:12.5px;color:var(--stone);font-family:'IBM Plex Mono',monospace;}
+
+  /* ---- How I work ---- */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(max-width:880px){.process{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.process{grid-template-columns:1fr;}}
+  .p-step{background:var(--white);padding:28px 24px;}
+  .p-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--clay);margin-bottom:12px;}
+  .p-step h4{font-family:'Fraunces',serif;font-weight:500;font-size:16px;color:var(--walnut);margin-bottom:8px;}
+  .p-step p{font-size:13px;color:#6B6153;}
+
+  /* ---- Samples ---- */
+  .sample{
+    border:1px solid var(--line);background:var(--white);margin-bottom:24px;
+    padding:36px 36px 32px;
+  }
+  .sample-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--line);}
+  .sample-top .s-index{font-family:'Fraunces',serif;font-style:italic;font-size:28px;color:var(--clay-soft);line-height:1;}
+  .sample-tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .stag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:2px;background:var(--sand);color:var(--walnut);}
+  .sample h3{font-family:'Fraunces',serif;font-weight:500;font-size:22px;color:var(--walnut);margin-bottom:14px;line-height:1.3;}
+  .sample .excerpt{font-size:14.5px;color:#4D4437;margin-bottom:20px;}
+  .sample .excerpt em{color:var(--clay);font-style:normal;font-weight:500;}
+  .breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;}
+  @media(max-width:760px){.breakdown{grid-template-columns:1fr;}}
+  .b-item{background:var(--bone);border:1px solid var(--line);padding:16px 18px;}
+  .b-item .b-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);margin-bottom:8px;}
+  .b-item p{font-size:13px;color:#5C5346;line-height:1.55;}
+
+  /* ---- Mockup preview ---- */
+  .preview-toggle{
+    margin-top:20px;background:none;border:1px solid var(--line);color:var(--walnut);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;
+    padding:10px 16px;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+    transition:border-color .2s, color .2s;
+  }
+  .preview-toggle:hover{border-color:var(--clay);color:var(--clay);}
+  .preview-toggle .arrow{transition:transform .2s;font-size:10px;}
+  .preview-toggle.open .arrow{transform:rotate(90deg);}
+  .mockup{
+    display:none;margin-top:22px;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    box-shadow:0 18px 40px rgba(91,74,58,0.08);
+  }
+  .mockup.show{display:block;}
+  .mockup-chrome{
+    background:var(--sand);padding:10px 16px;display:flex;align-items:center;gap:6px;
+    border-bottom:1px solid var(--line);
+  }
+  .mockup-chrome .dot-w{width:9px;height:9px;border-radius:50%;background:var(--line);}
+  .mockup-bar{
+    flex:1;margin-left:8px;background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:4px 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--stone);
+  }
+  .mockup-page{background:var(--white);padding:40px 44px;}
+  @media(max-width:600px){.mockup-page{padding:28px 22px;}}
+  .mockup-page .m-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);margin-bottom:12px;}
+  .mockup-page h4{font-family:'Fraunces',serif;font-weight:500;font-size:26px;color:var(--walnut);line-height:1.25;margin-bottom:16px;max-width:640px;}
+  .mockup-page .m-lede{font-size:15px;color:#4D4437;margin-bottom:22px;max-width:600px;}
+  .
+mockup-page h5{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--walnut);margin:26px 0 10px;}
+  .mockup-page p{font-size:14px;color:#4D4437;margin-bottom:12px;max-width:600px;}
+  .mockup-page ul{margin:12px 0 16px 20px;max-width:600px;}
+  .mockup-page li{font-size:14px;color:#4D4437;margin-bottom:8px;}
+  .mockup-table{width:100%;max-width:600px;border-collapse:collapse;margin:14px 0 18px;font-size:13px;}
+  .mockup-table th,.mockup-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;}
+  .mockup-table th{background:var(--bone);color:var(--walnut);font-weight:600;}
+  .mockup-page .m-cta{
+    margin-top:24px;display:inline-block;background:var(--walnut);color:var(--white);
+    padding:10px 20px;border-radius:3px;font-size:13px;font-weight:600;
+  }
+  .mockup-page .m-disclaimer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:11.5px;color:var(--stone);}
+  .contact{background:var(--walnut);color:var(--bone);border-top:none;}
+  .contact .eyebrow{color:var(--clay-soft);}
+  .contact h2{color:var(--white);}
+  .contact .sec-desc{color:#CFC3B2;}
+  .contact-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px;margin-top:40px;}
+  .contact-links a{text-decoration:none;color:var(--white);border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:2px;font-size:15px;}
+  .contact-links a:hover{color:var(--clay-soft);border-color:var(--clay-soft);}
+  .availability{
+    margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.02em;
+    color:var(--clay-soft);display:flex;align-items:center;gap:8px;
+  }
+  .availability::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--clay-soft);flex-shrink:0;}
+  .contact .btn-primary{background:var(--clay);color:var(--white);}
+  .contact .btn-primary:hover{box-shadow:0 10px 22px rgba(169,113,79,0.35);}
+
+  footer{background:var(--walnut);color:#B7AB98;padding:22px 0;font-size:12px;font-family:'IBM Plex Mono',monospace;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">Merihan Ewees<span class="logo-role">Medical Writer</span></div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Samples</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-label">Pharmacist &amp; Medical Content Writer</div>
+    <h1>Medical content, written by someone<br>who trained to get the <em>medicine</em> right.</h1>
+    <p class="hero-sub">I trained and practiced as a pharmacist before moving into content — clinical dispensing, hospital rounds, and drug safety work at a poison center. I write SEO articles, patient education, and HCP communications for pharma and healthcare brands, grounded in that clinical training and checked against current evidence.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">View writing samples</a>
+      <a href="#contact" class="btn btn-ghost">Start a project</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Services</div>
+      <h2>Services</h2>
+      <p class="sec-desc">Four engagement types, each with a defined scope and deliverable.</p>
+    </div>
+    <div class="service-list">
+      <div class="service">
+        <div><span class="s-num">01</span><div class="s-name">SEO medical content</div></div>
+        <div>
+          <p>Long-form articles, product pages, and landing pages built around a specific keyword or search intent, structured for on-page SEO and sourced from peer-reviewed evidence. Suited to pharma, device, and clinic websites publishing on a regular cadence.</p>
+          <div class="s-examples">Deliverable: SEO article, product guide, or condition explainer</div>
+        </div>
+</div>
+      <div class="service">
+        <div><span class="s-num">02</span><div class="s-name">HCP communications</div></div>
+        <div>
+          <p>Email campaigns and portal copy written for a clinician audience, in the compliance-appropriate register that kind of communication requires. Drafted to fit within your medical and regulatory review process, not around it.</p>
+          <div class="s-examples">Deliverable: HCP email sequence or portal copy</div>
+        </div>
+      </div>
+      <div class="service">
+        <div><span class="s-num">03</span><div class="s-name">Bilingual medical content (English–Arabic)</div></div>
+        <div>
+          <p>Patient leaflets, brochures, and educational material adapted for an Arabic-speaking audience rather than translated word-for-word — the clinical meaning stays exact, the phrasing reads as though it was written in Arabic from the start.</p>
+          <div class="s-examples">Deliverable: bilingual patient leaflet, brochure, or label copy</div>
+        </div>
+      </div>
+      <div class="service">
+        <div><span class="s-num">04</span><div class="s-name">Content audits and rewrites</div></div>
+        <div>
+          <p>A review of existing medical content against current clinical evidence and search performance, followed by a rewrite of the sections that need it. Useful for older content that has drifted out of date or stopped performing.</p>
+          <div class="s-examples">Deliverable: written audit and revised copy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Selected samples</div>
+      <h2>Five briefs, five different readers</h2>
+      <p class="sec-desc">Brand and product names have been generalized — these were written for named pharma and healthcare clients under NDA. Full drafts available on request.</p>
+    </div>
+
+    <div class="sample">
+      <div class="sample-top">
+        <div class="s-index">01</div>
+        <div class="sample-tags"><span class="stag">SEO product guide</span><span class="stag">Scar care brand</span></div>
+      </div>
+      <h3>How to Choose the Right Silicone Scar Sheets After Surgery</h3>
+      <p class="excerpt">Written for a scar-care brand's silicone sheet line, targeting post-surgical patients searching for scar treatment. The piece opens on the reader's real question — <em>why do some scars heal smoothly and others don't</em> — before explaining the clinical mechanism (transepidermal water loss and collagen regulation) in plain terms, then maps each product variant to a specific surgery type, scar size, and body area.</p>
+      <div class="breakdown">
+        <div class="b-item"><div class="b-label">Written for</div><p>A direct-to-consumer scar-care brand selling through pharmacy and online retail across the Gulf region.</p></div>
+        <div class="b-item"><div class="b-label">Voice &amp; tone</div><p>Reassuring but not soft — leads with mechanism and evidence, avoids hype language, treats the reader as capable of understanding "why," not just "what to buy."</p></div>
+        <div class="b-item"><div class="b-label">Clinically</div><p>Correctly explains occlusive barrier therapy and TEWL, cites peer-reviewed sourcing, and flags contraindications for open wounds — the kind of safety note pharma legal teams check for first.</p></div>
+      </div>
+      <button class="preview-toggle" onclick="toggleMockup(this,'mockup-01')"><span class="arrow">▶</span> See how this reads as a formatted page</button>
+      <div class="mockup" id="mockup-01">
+        <div class="mockup-chrome">
+          <span class="dot-w"></span><span class="dot-w"></span><span class="dot-w"></span>
+          <div class="mockup-bar">yourbrand.com/blog/silicone-scar-sheets-guide</div>
+        </div>
+        <div class="mockup-page">
+          <div class="m-eyebrow">Scar Care Guide</div>
+          <h4>How to Select the Right Silicone Sheets for Your Surgery Scar</h4>
+<p class="m-lede">Have you ever wondered why some scars heal smoothly while others remain visible for years? Medical-grade silicone scar sheets are the gold standard in modern scar care — the real difference is choosing the right sheet for your scar's shape, size, and location.</p>
+          <h5>How Do Silicone Sheets Help Improve Scar Healing?</h5>
+          <p>Newly formed skin loses moisture abnormally fast, a process called transepidermal water loss. This dehydration signals the skin to overproduce collagen — the cause of raised, visible scars. Silicone sheets restore the skin's moisture balance and interrupt that signal.</p>
+          <h5>Which Sheet Matches Your Surgery Type?</h5>
+          <ul>
+            <li><strong>C-Section</strong> — hydrates and softens post-partum incision lines.</li>
+            <li><strong>Tummy Tuck</strong> — a longer format sized for abdominal incisions.</li>
+            <li><strong>Facial / Acne</strong> — lightweight, nearly invisible for daily wear.</li>
+          </ul>
+          <h5>Choosing the Right Size</h5>
+          <table class="mockup-table">
+            <tr><th>Product</th><th>Size</th><th>Best for</th></tr>
+            <tr><td>C-Section</td><td>16 × 4 cm</td><td>Post C-section incisions</td></tr>
+            <tr><td>Tummy Tuck</td><td>60 × 8 cm</td><td>Tummy tuck surgical scars</td></tr>
+            <tr><td>Facial / Acne</td><td>1.5 × 1.5 cm</td><td>Facial &amp; acne scars</td></tr>
+          </table>
+          <a class="m-cta">Buy Now</a>
+          <div class="m-disclaimer">This content is for educational purposes only and does not replace professional medical advice. Always consult your doctor for guidance on scar care.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sample">
+      <div class="sample-top">
+        <div class="s-index">02</div>
+        <div class="sample-tags"><span class="stag">Condition explainer</span><span class="stag">Scar care brand</span></div>
+      </div>
+      <h3>A Tailored Solution for Different Types of Surgical Scars</h3>
+      <p class="excerpt">A companion piece to the guide above, going deeper on the clinical differences between flat, hypertrophic, and keloid scars. Rather than leading with the product, it educates first — helping the reader identify what type of scar they actually have — then routes them to the right product and, just as importantly, to a clear set of signs that mean it's time to see a dermatologist.</p>
+      <div class="breakdown">
+        <div class="b-item"><div class="b-label">Written for</div><p>The same scar-care brand, positioned as an educational follow-up article to build search authority around scar types.</p></div>
+        <div class="b-item"><div class="b-label">Voice &amp; tone</div><p>Slightly more clinical than the product guide — this piece is trust-building content, so it prioritizes being genuinely useful over converting a sale on the first read.</p></div>
+        <div class="b-item"><div class="b-label">Clinically</div><p>Distinguishes scar pathology by real risk factors — skin tone, family history, wound tension — and includes an appropriate escalation trigger for professional care.</p></div>
+      </div>
+      <button class="preview-toggle" onclick="toggleMockup(this,'mockup-02')"><span class="arrow">▶</span> See how this reads as a formatted page</button>
+      <div class="mockup" id="mockup-02">
+        <div class="mockup-chrome">
+          <span class="dot-w"></span><span class="dot-w"></span><span class="dot-w"></span>
+          <div class="mockup-bar">yourbrand.com/blog/surgical-scar-types-guide</div>
+        </div>
+        <div class="mockup-page">
+          <div class="m-eyebrow">Scar Care Guide</div>
+          <h4>A Tailored Solution for Different Types of Surgical Scars</h4>
+          <p class="m-lede">After surgery, it's natural to wonder how your scar will heal. Understanding the type of scar you have is an important first step — and with early, consistent care, it's possible to support smoother healing over time.</p>
+<h5>What Are the Different Types of Scars After Surgery?</h5>
+          <ul>
+            <li><strong>Flat (mature) scars</strong> — settle and lighten naturally over time.</li>
+            <li><strong>Hypertrophic scars</strong> — raised, firm, stay within the wound area.</li>
+            <li><strong>Keloid scars</strong> — raised scars that grow beyond the original wound.</li>
+          </ul>
+          <h5>How Do Silicone Sheets Support Surgical Scars?</h5>
+          <p>By acting as an occlusive barrier, silicone sheets reduce transepidermal water loss and help regulate excess collagen formation, one of the main causes of raised scars, so scars can become smoother and less visible over time.</p>
+          <h5>When to See a Doctor</h5>
+          <p>If a new scar quickly becomes very raised, itchy, or extends beyond the original wound, or you have a family history of keloids, it's worth seeing a dermatologist early for tailored treatment.</p>
+          <a class="m-cta">Buy Now</a>
+          <div class="m-disclaimer">This content is for educational purposes only and does not replace professional medical advice. Always consult your doctor for guidance on scar care.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sample">
+      <div class="sample-top">
+        <div class="s-index">03</div>
+        <div class="sample-tags"><span class="stag">Facility &amp; service copy</span><span class="stag">Hospital group</span></div>
+      </div>
+      <h3>How an Airport Medical Center Provides 24/7 Immediate Care</h3>
+      <p class="excerpt">Written for a hospital group's airport-based medical center, aimed at travelers and airport staff. The piece frames the service around a specific, high-anxiety moment — symptoms appearing mid-journey, no time to search for care — walks through each department's offering, and closes with a clear medical-center-versus-hospital decision framework so readers know when each is the right call.</p>
+      <div class="breakdown">
+        <div class="b-item"><div class="b-label">Written for</div><p>A multi-branch hospital group's flagship airport clinic, part of a broader content series linking branch pages together.</p></div>
+        <div class="b-item"><div class="b-label">Voice &amp; tone</div><p>Calm and practical — written for someone mid-stress, so sentences stay short, structure stays scannable, and reassurance comes from clarity rather than warmth alone.</p></div>
+        <div class="b-item"><div class="b-label">Clinically</div><p>Lists jet lag symptoms accurately against clinical sourcing and draws an appropriate triage line between center-level and emergency-level care.</p></div>
+      </div>
+      <button class="preview-toggle" onclick="toggleMockup(this,'mockup-03')"><span class="arrow">▶</span> See how this reads as a formatted page</button>
+      <div class="mockup" id="mockup-03">
+        <div class="mockup-chrome">
+          <span class="dot-w"></span><span class="dot-w"></span><span class="dot-w"></span>
+          <div class="mockup-bar">yourhospitalgroup.com/blog/airport-medical-center</div>
+        </div>
+        <div class="mockup-page">
+          <div class="m-eyebrow">Patient Guide</div>
+          <h4>How a Medical Center at the Airport Provides 24/7 Immediate Care</h4>
+          <p class="m-lede">Symptoms like chest pain, dizziness, or a sudden fever can appear without warning while traveling — and in those moments, leaving the airport to seek care isn't practical. A trusted medical center just steps away becomes essential.</p>
+          <h5>What Services Are Available?</h5>
+          <ul>
+            <li><strong>General medicine</strong> — fever, respiratory infections, travel-related aches.</li>
+            <li><strong>Women's health</strong> — obstetrics and gynecology consultations.</li>
+            <li><strong>Orthopedics</strong> — joint pain and minor travel-related injuries.</li>
+          </ul>
+          <h5>Medical Center or Hospital: Which Is Right for You?</h5>
